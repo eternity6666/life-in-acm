@@ -9,8 +9,10 @@ using namespace std;
 
 int main()
 {
+    fre;
     int L,N;
     cin>>L>>N;
+    char a[8];
     
     return 0;
 }
