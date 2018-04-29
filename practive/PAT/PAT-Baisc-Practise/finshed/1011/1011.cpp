@@ -33,7 +33,6 @@ int main()
     for (it = n.begin(); it != n.end(); it +=3)
     {
         cout << "Case #" << i++<< ": ";
-        // cout<<endl;
         deal(*it, *(it+1), *(it+2));
     }
 }

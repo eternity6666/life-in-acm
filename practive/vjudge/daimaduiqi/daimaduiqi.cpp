@@ -4,7 +4,7 @@ using namespace std;
 #define frein freopen("in.txt", "r", stdin)
 #define freout freopen("out.txt", "w", stdout)
 
-#define shiyongfre
+// #define shiyongfre
 
 const char space = '\32';
 
