@@ -1,71 +1,63 @@
 #include <iostream>
-#include <string>
+#include <cstdio>
 #include <cstring>
-#include <fstream>
+#include <string>
 using namespace std;
+const int maxn = 100;
+int chance;
+int left1;
+char s[maxn], s2[maxn];
+int win, lose;
 
-#define usefre
-
-string flag;
-
-bool cmp(char tmp);
+void guess(char);
 
 int main()
 {
-#ifdef usefre
-    freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
-#endif
-
-    int num;
-    string ans[] = {"You win.", "You chickened out.", "You lose."};
-    string guess;
-    while (cin >> num&&num!=-1)
+    int rnd;
+    while (scanf("%d%s%s", &rnd, s, s2) == 3 && rnd != -1)
     {
-        int chance = 7;
-        int ans_tmp=3;
-        cout << "Round " << num << endl;
-        cin >> flag >> guess;
-        int left = flag.length();
-        for (int i = 0; i < guess.length(); i++)
+        cout << "Round " << rnd << endl;
+        win = lose = 0;
+        left1 = strlen(s);
+        chance = 7;
+        for (int i = 0; i < strlen(s2); i++)
         {
-            if (!cmp(guess[i]))
-            {
-                chance--;
-            }
-            else
-            {
-                left--;
-            }
-            if (chance == 0)
-            {
-                ans_tmp = 2;
+            guess(s2[i]);
+            if (win || lose)
                 break;
-            }
-            if (left == 0)
-            {
-                ans_tmp = 0;
-                break;
-            }
         }
-        if (ans_tmp == 3 && chance != 0)
-        {
-            ans_tmp = 1;
-        }
-        cout << ans[ans_tmp] << endl;
+        if (win)
+            cout << "You win.\n";
+        else if (lose)
+            cout << "You lose.\n";
+        else
+            cout << "You chickened out.\n";
     }
+    return 0;
 }
-//判断guess[i]是否在flag中
-bool cmp(char tmp)
+
+void guess(char ch)
 {
-    for (int i = 0; i < flag.length(); i++)
+    int bad = 1;
+    for (int i = 0; i < strlen(s); i++)
     {
-        if (flag[i] == tmp)
+        if (s[i] == ch)
         {
-            //yes,return ture;
-            return true;
+            left1--;
+            s[i] = ' ';
+            bad = 0;
         }
     }
-    //no,return flase;
-    return false;
+    if (bad)
+    {
+        --chance;
+    }
+    if (!chance)
+    {
+        lose = 1;
+    }
+    if (!left1)
+    {
+        win = 1;
+    }
 }
