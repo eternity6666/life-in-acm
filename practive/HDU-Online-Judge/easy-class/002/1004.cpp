@@ -2,7 +2,7 @@
 #include <vector>
 #include <fstream>
 using namespace std;
-#define usefre
+// #define usefre
 int main()
 {
 #ifdef usefre
@@ -23,11 +23,24 @@ int main()
             cin >> tmp;
             a.push_back(tmp);
         }
-        while(a.size()!=1)
+        while (a.size() != 1)
         {
-            long long aa=*(a.begin());
-            long long bb=*(a.begin()+1);
+            long long aa = *(a.begin());
+            long long bb = *(a.begin() + 1);
+            while (aa % bb != 0)
+            {
+                aa = aa % bb;
+                if (aa < bb)
+                {
+                    tmp = bb;
+                    bb = aa;
+                    aa = tmp;
+                }
+            }
+            *(a.begin())=*(a.begin())**(a.begin()+1)/bb;
+            a.erase(a.begin()+1);
         }
+        cout << *a.begin() << endl;
     }
 
     return 0;
