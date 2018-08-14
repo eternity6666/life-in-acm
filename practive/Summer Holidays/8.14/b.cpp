@@ -11,7 +11,6 @@
 #include <fstream>
 #include <sstream>
 #include <cstdio>
-#include <cstdlib>
 #define usefre
 
 using namespace std;
@@ -23,5 +22,14 @@ int main()
     freopen("out.txt","w",stdout);
 #endif
 
+    int n;
+    while(scanf("%d", &n) == 1)
+    {
+        double ans = 0;
+       // ans = acos(-1) * acos(-1) / 6;
+        for(int i = 1; i <= n; i++)
+            ans = ans + 1.0 / i / i;
+        printf("%.5lf\n", ans);
+    }
     return 0;
 }

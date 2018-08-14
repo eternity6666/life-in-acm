@@ -11,7 +11,6 @@
 #include <fstream>
 #include <sstream>
 #include <cstdio>
-#include <cstdlib>
 #define usefre
 
 using namespace std;

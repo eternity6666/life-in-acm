@@ -11,10 +11,12 @@
 #include <fstream>
 #include <sstream>
 #include <cstdio>
-#include <cstdlib>
 #define usefre
-
 using namespace std;
+
+string ans[2] = {"Bad", "Balanced"};
+
+int deal(int n);
 
 int main()
 {
@@ -23,5 +25,21 @@ int main()
     freopen("out.txt","w",stdout);
 #endif
 
+    int t;
+    scanf("%d", &t);
+    while(t--)
+    {
+        int n;
+        scanf("%d", &n);
+        int answer = deal(n);
+        cout << ans[answer] << endl;
+    }
     return 0;
+}
+
+int deal(int n)
+{
+    if(n % 2 == 0)
+        return 0;
+    else return 1;
 }

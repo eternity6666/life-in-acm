@@ -11,7 +11,6 @@
 #include <fstream>
 #include <sstream>
 #include <cstdio>
-#include <cstdlib>
 #define usefre
 
 using namespace std;
@@ -23,5 +22,18 @@ int main()
     freopen("out.txt","w",stdout);
 #endif
 
+    int t;
+    scanf("%d", &t);
+    while(t--)
+    {
+        int n;
+        scanf("%d", &n);
+        if(n <= 10)
+            cout << n << endl;
+        else
+        {
+
+        }
+    }
     return 0;
 }
