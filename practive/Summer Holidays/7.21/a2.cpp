@@ -25,10 +25,12 @@ void gettime()
     {
         B[i] = A[i] + B[i - 1];
     }
+    /*
     for (int i = 0; i <= 100000; i++)
     {
         cout << i << "        " << A[i] << "        " << B[i] << endl;
     }
+    */
 }
 
 int main()

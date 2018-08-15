@@ -20,7 +20,7 @@ int main()
     vector<ul> san;
     vector<ul> sumDivided;
     ul isNewSan=0;
-    sumDivided.push_back(0)
+    sumDivided.push_back(0);
     vector<ul>::iterator it;
     for(it=allPrime.begin();it!=allPrime.end();it++)
     {
