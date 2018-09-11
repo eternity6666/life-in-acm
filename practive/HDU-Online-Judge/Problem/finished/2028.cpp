@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
-int gcd(int a, int b);
+long long gcd(long long a, long long b);
 int main()
 {
     long long n;
     while(~scanf("%lld", &n))
     {
-        int a, b;
+        long long a, b;
         cin >> a;
         n--;
         while(n--)
@@ -19,7 +19,13 @@ int main()
     return 0;
 }
 
-int gcd(int a, int b)
+long long gcd(long long a, long long b)
 {
-    //return b == 0?a:gcd(a%b, a)
+    while(b > 0)
+    {
+        long long t = a % b;
+        a = b;
+        b = t;
+    }
+    return a;
 }
