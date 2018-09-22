@@ -1,27 +1,14 @@
-#include <iostream>
-#include <vector>
-#include <set>
-#include <map>
-#include <algorithm>
-#include <cmath>
-#include <string>
-#include <cstring>
-#include <queue>
-#include <stack>
-#include <fstream>
-#include <sstream>
-#include <cstdio>
-#include <cstdlib>
-#define usefre
-
+#include <bits/stdc++.h>
+#define fei(a, b) for(int i = a; i <= b; i++)
+#define fej(a, b) for(int j = a; j <= b; j++)
+#define fni(a, b) for(int i = a; i < b; i++)
+#define fnj(a, b) for(int j = a; j < b; j++)
 using namespace std;
+
+const int maxn = 100 + 5;
 
 int main()
 {
-#ifdef usefre
-    freopen("in.txt","r",stdin);
-    freopen("out.txt","w",stdout);
-#endif
-
-    return 0;
+    freopen("in.txt", "r", stdin);
 }
+
