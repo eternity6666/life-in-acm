@@ -6,25 +6,31 @@
 using namespace std;
 
 const int maxn = 1000 + 5;
-
-int food[maxn], n, m;
-
+int n, m;
+int food[maxn];
+int dp[maxn];
 int main()
 {
     freopen("in.txt", "r", stdin);
     while(~scanf("%d", &n) && n)
     {
+        memset(dp, 0, maxn);
         fei(1, n)
             scanf("%d", food + i);
+        sort(food + 1, food + n + 1);
         scanf("%d", &m);
-        sort(food + 1, food + n);
-        fei(1, n)
+        if(m < 5)
         {
-            if(m < 5)
-                break;
-            m = m - food[i];
+            cout << m << endl;
+            continue;
         }
-        cout << m << endl;
+        m -= 5;
+        fni(1, n)
+        {
+            for(int j = m; j >= food[i]; j--)
+                dp[j] = max(dp[j], dp[j - food[i]] + food[i]);
+        }
+        cout << m - dp[m] - food[n] + 5 << endl;
     }
     return 0;
 }
