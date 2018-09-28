@@ -13,12 +13,15 @@ struct node{
 bool used[25];
 bool cmp(const node a, const node b)
 {
+    return a.e < b.e;
+    /*
     if(a.length != b.length)
         return a.length < b.length;
-    else if(a.s != b.s)
-        return a.s < b.s;
-    else
+    else if(a.e != b.e)
         return a.e < b.e;
+    else
+        return a.s > b.s;
+    */
 }
 
 int main()
@@ -30,10 +33,20 @@ int main()
         fei(1, n)
         {
             cin >> program[i].s >> program[i].e;
-            program[i].length = program[i].e - program[i].s;
+            // program[i].length = program[i].e - program[i].s;
         }
         sort(program + 1, program + n + 1, cmp);
-        int ans = 0;
+        int ans = 1;
+        int tmp = program[1].e;
+        fei(2, n)
+        {
+            if(program[i].s >= tmp)
+            {
+                ans++;
+                tmp = program[i].e;
+            }
+        }
+        /*
         fei(1, n)
         {
             bool flag = 1;
@@ -47,12 +60,13 @@ int main()
             }
             if(flag)
             {
-                //cout << program[i].s << program[i].e << endl;
+                // cout << program[i].s << program[i].e << endl;
                 ans++;
                 fej(program[i].s + 1, program[i].e - 1)
                     used[j] = 0;
             }
         }
+        */
         cout << ans << endl;
     }
     return 0;
