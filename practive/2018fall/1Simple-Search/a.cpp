@@ -13,24 +13,48 @@ bool vy[maxn];
 
 bool input();
 
+void dfs(int i, int time);
+
 int main()
 {
     freopen("in.txt", "r", stdin);
     while(input())
     {
-
+        dfs(1, 0);
+        cout << ans << endl;
     }
     return 0;
 }
 
+void dfs(int i, int time)
+{
+    if(time == k)
+    {
+        ans++;
+        return ;
+    }
+    if(i > n || n - i + time + 1 < k)
+        return ;
+    fej(1, n)
+    {
+        if(vy[j] == 0 && c[i][j] == '#')
+        {
+            // cout << i << j << endl;
+            vy[j] = 1;
+            dfs(i + 1, time + 1);
+            vy[j] = 0;
+        }
+    }
+    dfs(i + 1, time);
+}
 bool input()
 {
     cin >> n >> k;
     if(n + k < 0)
         return false;
-    fni(0, n)
+    fei(1, n)
     {   vx[i] = vy[i] = 0;
-        fnj(0, n)
+        fej(1, n)
             cin >> c[i][j];
     }
     ans = 0;
