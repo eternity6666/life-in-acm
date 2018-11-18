@@ -5,20 +5,10 @@
 using namespace std;
 const int maxn = 100 + 5;
 
-bool input();
-
 int main()
 {
     freopen("in.txt", "r", stdin);
 
-    while(input())
-    {
-
-    }
     return 0;
 }
 
-bool input()
-{
-
-}
