@@ -1,5 +1,8 @@
 # life-in-acm
-180403,I hope I can enjoy the life of ACM.
+## [190122]
+1. join a competition named [190122] in NowCoder
+## [180403]
+1. I hope I can enjoy the life of ACM.
 
 ## [180405]
 **The add news**
