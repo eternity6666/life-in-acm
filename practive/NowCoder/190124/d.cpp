@@ -8,7 +8,17 @@ const int maxn = 100 + 5;
 int main()
 {
     freopen("in.txt", "r", stdin);
-
+    int n;
+    cin >> n;
+    long long sum = 0;
+    fei(1, n)
+    {
+        int a;
+        cin >> a;
+        if(a < 60)
+            sum++;
+    }
+    cout << sum * 400 << endl;
     return 0;
 }
 

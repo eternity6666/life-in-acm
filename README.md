@@ -1,6 +1,10 @@
 # life-in-acm
+## [190124]
+1. jion a competition named [190124] in NowCoder.
+
 ## [190122]
-1. join a competition named [190122] in NowCoder
+1. join a competition named [190122] in NowCoder.
+
 ## [180403]
 1. I hope I can enjoy the life of ACM.
 
