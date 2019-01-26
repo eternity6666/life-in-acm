@@ -7,36 +7,39 @@ const int maxn = 100 + 5;
 
 struct node
 {
-    long long a, b;
-    double x;
+    int a, b;
 };
 
-bool cmp(node x, node y)
+bool cmp(node a, node b)
 {
-    return x.x > y.x;
+    if(a.b != b.b)
+        return a.b > b.b;
+    else
+        return a.a < b.a;
 }
 
 int main()
 {
     freopen("in.txt", "r", stdin);
-    long long n;
-    cin >> n;
+
     vector<node> ve;
+    int n;
+    cin >> n;
     node tmp;
-    long long temp = 0;
+    int temp = 0;
     fei(1, n)
     {
         cin >> tmp.a >> tmp.b;
-        tmp.x = 1.0 * tmp.b / tmp.a;
         temp += tmp.b;
         ve.push_back(tmp);
     }
     sort(ve.begin(), ve.end(), cmp);
-    long long ans = 0;
-    fei(0, n - 1)
+
+    int ans = 0;
+    fei(1, n)
     {
-        temp = temp - ve[i].b;
-        ans = ans + ve[i].a * temp;
+        temp -= ve[i - 1].b;
+        ans = ans + ve[i - 1].a * temp;
     }
     cout << ans << endl;
     return 0;
