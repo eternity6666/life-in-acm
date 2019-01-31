@@ -1,4 +1,7 @@
 # life-in-acm
+## [190131]
+1. jion a competition named [190131] in NowCoder.
+
 ## [190126]
 1. jion a competition named [190126] in NowCoder.
 
