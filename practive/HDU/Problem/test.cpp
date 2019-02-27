@@ -1,5 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+int main()
+{
+    long long ans = 1;
+    for(int i = 1; i <=20; i++)
+    {
+        ans = ans * i;
+        cout << ans << endl;
+    }
+}
+
+/*
+#include <bits/stdc++.h>
+using namespace std;
 int main()
 {
     char c;
@@ -10,6 +24,8 @@ int main()
     }
     return 0;
 }
+*/
+
 /*
 //can't
 #include <iostream>
