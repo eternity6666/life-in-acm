@@ -1,5 +1,10 @@
-100 4 
-2 1 2 
-5 10 13 11 12 14 
-2 0 1 
-2 99 2 
+4
+Alashankou 50
+Urumchi 65
+Hohhot 69
+Ulanqab 75
+2
+Urumchi Alashankou 96
+Hohhot Ulanqab 125
+Alashankou Ulanqab
+
