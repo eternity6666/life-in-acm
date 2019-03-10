@@ -5,60 +5,86 @@
 using namespace std;
 const int maxn = 100 + 5;
 
-
 struct node
 {
     int data;
     string next;
 };
 
-map<string, node> m;
+map<string, node> ma;
+string st, ed;
+int n; 
+vector<string> v1, v2;
 
 int main()
 {
     freopen("in.txt", "r", stdin);
-    string s1, s2;
-    int n;
-    cin >> s1 >> s2 >> n;
+    
+    cin >> st >> ed;
+    cin >> n;
 
     fei(1, n)
     {
-        string tmp;
+        string tmp1;
         node tmp2;
-        cin >> tmp >> tmp2.data >> tmp2.next;
-        m[tmp] = tmp2;
+        cin >> tmp1 >> tmp2.data >> tmp2.next;
+        ma[tmp1] = tmp2;
     }
-    
-    string tmp = s1;
-    string ans;
-     bool flag = 0;
-    while(tmp != "-1")
+    string tmp = st;
+    v1.push_back(st);
+    do
     {
-        string tmp2 = s2;
-        while(tmp2 != "-1")
+        tmp = ma[tmp].next;
+        v1.push_back(tmp);
+    }while(tmp != "-1" && tmp != st);
+    reverse(v1.begin(), v1.end());
+    // cout << 1 << endl;
+
+    tmp = ed;
+    v2.push_back(ed);
+    do
+    {
+        tmp = ma[tmp].next;
+        v2.push_back(tmp);
+    }while(tmp != "-1" && tmp != ed);
+    reverse(v2.begin(), v2.end());
+    // cout << 2 << endl;
+
+    vector<string>::iterator it1, it2;
+
+    it1 = v1.begin();
+    it2 = v2.begin();
+
+    if(*it1 != *it2)
+        cout << "-1" << endl;
+    else
+    {
+        bool flag = 0;
+        for(;it1 != v1.end() && it2 != v2.end();)
         {
-            if(tmp2 == tmp)
+            if(*it1 == *it2)
             {
-                flag = 1; 
+                it1++;
+                it2++;
+            }
+            else
+            {
+                flag = 1;
                 break;
             }
-            tmp2 = m[tmp2].next;
-            if(tmp2 == s2)
-                break;
+            // cout << 3 << endl;
         }
         if(flag)
+            cout << ma[*(it2 - 1)].data << " " << ma[*(it2 - 1)].next << endl;
+        else
         {
-            ans = tmp;
-            break;
+            if(it1 == v1.end())
+                cout << ma[*(it2 - 1)].data << " " << ma[*(it2 - 1)].next << endl;
+            else
+                cout << ma[*(it1 - 1)].data << " " << ma[*(it1 - 1)].next << endl;
         }
-        tmp = m[tmp].next;
-        if(tmp == s1)
-            break;
     }
-    if(flag)
-        cout << m[ans].data << " " << m[ans].next << endl;
-    else
-        cout << -1 << endl;
+
     return 0;
 }
 
