@@ -11,6 +11,17 @@ int main()
 {
     freopen("in.txt", "r", stdin);
 
+    long long n;
+    cin >> n;
+    while(n--)
+    {
+        int a, b;
+        cin >> a >> b;
+        a = a % 100;
+        b = b % 100;
+        int ans = a + b;
+        cout << ans % 100 << endl;
+    }
     return 0;
 }
 

@@ -24,18 +24,28 @@ int main()
             break;
         int sx, sy;
         ans = 0;
-        fei(1, n)
-            cin >> c[i];
+        // fei(1, n)
+        //    cin >> c[i];
         fei(1, n)
             fej(1, m)
             {
                 flag[i][j] = 0;
+                cin >> c[i][j];
                 if(c[i][j] == 'S')
                 {
                     sx = i;
                     sy = j;
                 }
             }
+        /*
+        fei(1, n)
+        {
+            fej(1, m)
+                cout << c[i][j];
+            cout << endl;
+        }
+        */
+
         dfs(sx, sy, 0);
         if(ans)
             cout << "YES" << endl;
@@ -49,18 +59,25 @@ void dfs(int x, int y, int used)
 {
     if(used > t || x < 1 || x > n || y < 1 || y > m)
         return ;
+    if(flag[x][y])
+        return ;
+    // cout << 1 << endl;
     if(used == t && c[x][y] == 'D')
     {
         ans = 1;
         return ;
     }
+    if(c[x][y] == 'D' && used != t)
+        return ;
     if(c[x][y] == 'X')
         return ;
     fei(0, 3)
     {
         flag[x][y] = 1;
-        if(flag[x + dx[i]][y + dy[i]] == 0)
-            dfs(x + dx[i], y + dy[i], used + 1);
+        // if(flag[x + dx[i]][y + dy[i]] == 0)
+        dfs(x + dx[i], y + dy[i], used + 1);
+        if(ans)
+            return ;
         flag[x][y] = 0;
     }
 }
