@@ -8,7 +8,17 @@ const int maxn = 100 + 5;
 int main()
 {
     freopen("in.txt", "r", stdin);
-
+    int a, b;
+    cin >> a >> b;
+    int tmp = a * b;
+    int ans = 0;
+    while(tmp / 10 != 0)
+    {
+        ans = ans * 10 + tmp % 10;
+        tmp /= 10;
+    }
+    ans = ans * 10 + tmp;
+    cout << ans << endl;
     return 0;
 }
 

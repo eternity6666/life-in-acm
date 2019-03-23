@@ -8,7 +8,9 @@ const int maxn = 100 + 5;
 int main()
 {
     freopen("in.txt", "r", stdin);
-
+    string s = "I Love GPLT";
+    for(int i = 0; i < s.length(); i++)
+        cout << s[i] << endl;
     return 0;
 }
 
