@@ -4,59 +4,70 @@
 #define fek(a, b) for(int k = a; k <= b; k++)
 using namespace std;
 const int maxn = 100 + 5;
-int n, g, k;
 
 struct node
 {
-    string name;
-    int score;
-};
-
-bool operator < (node a, node b)
-{
-    if(a.score != b.score)
-        return a.score > b.score;
-    else
-        return a.name < b.name;
-}
+    int a;
+    vector<int> ve;
+    int x;
+}no[maxn];
+bool v[maxn];
+int n;
 
 int main()
 {
     freopen("in.txt", "r", stdin);
-    cin >> n >> g >> k;
-    set<node> se;
-    int ans1 = 0;
+    cin >> n;
+    queue<int> q;
     fei(1, n)
     {
-        node tmp;
-        cin >> tmp.name >> tmp.score;
-        if(tmp.score >= g)
-            ans1 += 50;
-        else if(tmp.score >= 60)
-            ans1 += 20;
-        se.insert(tmp);
+        cin >> no[i].a;
+        no[i].a *= 10;
+        no[i].x = 0;
+        q.push(i);
+    }
+    int x = 0;
+    int syg = 0;
+    while(!q.empty())
+    {
+        int tmp = q.front();
+        q.pop();
+        if(no[tmp].x < no[tmp].a)
+        {
+            if(syg == tmp)
+                x += 2;
+            else
+                x++;
+            no[tmp].ve.push_back(x);
+            syg = tmp;
+            no[tmp].x++;
+            q.push(tmp);
+        }
     }
 
-    cout << ans1 << endl;
-    int x = 0;
-    int tmp = 0;
-    int x2 = 1;
-    set<node>::iterator it = se.begin();
-    while(1)
+    /*
+    for(int i = 1; i <= sum; i++)
     {
-        node tmp2 = *it;
-        if(tmp2.score != tmp)
+        
+    }
+    */
+
+    fei(1, n)
+    {
+        cout << "#" << i << endl;
+        int tmp = 0;
+        vector<int>::iterator it;
+        for(it = no[i].ve.begin(); it != no[i].ve.end(); it++)
         {
-            x = x2;
+            if(tmp % 10 == 0)
+                cout << *it;
+            else
+                cout << " " << *it;
+            tmp++;
+            if(tmp % 10 == 0)
+                cout << endl;
         }
-        if(x > k)
-            break;
-        x2++;
-        tmp = tmp2.score;
-        cout << x << " " << tmp2.name << " " << tmp2.score << endl;
-        it++; 
-        if(it == se.end())
-            break;
+        // cout << endl;
     }
     return 0;
 }
