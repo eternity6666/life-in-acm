@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <limits.h> // include INT_MIN, INT_MAX
 #define fadd(i, a, b) for(int (i) = a; (i) <= b; (i)++)
 #define fcut(i, a, b) for(int (i) = a; (i) >= b; (i)--)
 #define ll long long
