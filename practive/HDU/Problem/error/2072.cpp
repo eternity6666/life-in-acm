@@ -16,10 +16,25 @@ int main()
             break;
         int len = s.length();
         int ans = 1;
+        bool flag = false;
+        bool flag2 = true;
         for(int i = 0; i < len; i++)
-            if(s[i] == ' ')
+            if(s[i] == ' ' && flag2)
+            {
                 ans++;
+                flag2 = false;
+            }
+            else if(s[i] == '#')
+            {
+                flag = true;
+                ans--;
+                break;
+            }
+            else if(s[i] != ' ')
+                flag2 = true;
         cout << ans << endl;
+        if(flag)
+            break;
     }
     return 0;
 }

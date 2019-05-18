@@ -13,7 +13,18 @@ const int maxn = 1e6 + 5;
 int main()
 {
     freopen("in.txt", "r", stdin);
+    string s;
+    while(getline(cin, s) && s != "#")
+    {
+        istringstream sin(s);
+        set<string> words;
+        string w;
+        
+        while(sin >> w)
+            words.insert(w);
 
+        cout << words.size() << endl;
+    }
     return 0;
 }
 
