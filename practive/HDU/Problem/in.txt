@@ -1,3 +1,2 @@
-int a b c
-asdf sadfa
-#
+1 100
+0 0
