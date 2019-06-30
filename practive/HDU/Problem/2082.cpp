@@ -7,80 +7,35 @@
 using namespace std;
 const int inf = 0x7f7f7f7f;
 const int mod = 1e9 + 7;
-const int maxn = 30;
+const int maxn = 50 + 5;
 
-int n;
-int a[maxn];
+int b[27];
 
-struct node
+int deal()
 {
-    int a[maxn];
-    int value;
-    int max;
-};
-
-/*
-void show(node tmp)
-{
+    int a[27][51];
+    memset(a, 0, sizeof a);
+    fadd(i, 0, 26)
+        a[i][0] = 1;
     fadd(i, 1, 26)
-        cout << tmp.a[i] << " ";
-    cout << endl;
-}
-*/
-
-long long deal()
-{
-    queue<node> q;
-    fadd(i, 1, 26)
-    {
-        if(a[i] > 0)
-        {
-            node tmp;
-            fadd(j, 1, 26)
-                if(j != i)
-                    tmp.a[j] = 0;
-            tmp.a[i] = 1;
-            tmp.value = i;
-            tmp.max = i;
-            q.push(tmp);
-        }
-    }
-
-    long long ans = 0;
-    while(!q.empty())
-    {
-        node tmp = q.front();
-        q.pop();
-
-        if(tmp.value <= 50)
-        {
-            ans++;
-           // show(tmp);
-            fadd(i, tmp.max, 26)
-            {
-                if(a[i] > tmp.a[i])
-                {
-                    node tmp2 = tmp;
-
-                    tmp2.max = i;
-                    tmp2.value += i;
-                    tmp2.a[i]++;
-                    q.push(tmp2);
-                }
-            }
-        }
-    }
-    return ans;
+        fadd(j, 1, 50)
+            for(int k = 0; k <= b[i] && j - k * i >= 0; k++)
+                a[i][j] += a[i - 1][j - k * i];
+    int sum = 0;
+    fadd(i, 1, 50)
+        sum += a[26][i];
+    return sum;
 }
 
 int main()
 {
     freopen("in.txt", "r", stdin);
+    int n;
     scanf("%d", &n);
     while(n--)
     {
         fadd(i, 1, 26)
-            scanf("%d", &a[i]);
+            scanf("%d", &b[i]);
         cout << deal() << endl;
     }
     return 0;

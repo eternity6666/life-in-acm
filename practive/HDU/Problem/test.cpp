@@ -52,7 +52,6 @@ struct node{
     int a;
     int b;
 };
-
 bool node::operator == (const string &a)
 {
     return (this->name == a);
