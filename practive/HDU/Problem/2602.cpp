@@ -1,13 +1,17 @@
 #include <bits/stdc++.h>
+#include <limits.h> // include INT_MIN, INT_MAX
+#define fadd(i, a, b) for(int (i) = a; (i) <= b; (i)++)
+#define fcut(i, a, b) for(int (i) = a; (i) >= b; (i)--)
+#define ll long long
+#define mem(a) memset((a), 0, sizeof(a))
 using namespace std;
-const int maxn = 1000 + 5;
+const int inf = 0x7f7f7f7f;
+const int mod = 1e9 + 7;
+const int maxn = 1005;
 
-struct node{
-    int a, b;
-    double w;
-}bones[maxn];
-
-bool cmp(node &a, node &b);
+int c[maxn];
+int w[maxn];
+int f[maxn][maxn];
 
 int main()
 {
@@ -18,36 +22,31 @@ int main()
     {
         int n, v;
         cin >> n >> v;
-        for(int i = 0; i < n; i++)
-        {
-            cin >> bones[i].a;
-        }
-        for(int i = 0; i < n; i++)
-        {
-            cin >> bones[i].b;
-            bones[i].w = (1.0) * bones[i].a /  bones[i].b;
-        }
+        fadd(i, 1, n)
+            cin >> w[i];
+        fadd(i, 1, n)
+            cin >> c[i];
 
-        sort(bones, bones + n, cmp);
-
-        int ans = 0;
-        for(int i = 0; i < n; i++)
+        memset(f, 0, sizeof(f));
+        fadd(i, 1, n)
         {
-            if(v <= 0)
-                break;
-            if(v >= bones[i].b)
-            {
-                v = v - bones[i].b;
-                ans += bones[i].a;
-                // cout << bones[i].a << endl;
-            }
+            fadd(j, 0, v)
+                if(j >= c[i])
+                    f[i][j] = max(f[i - 1][j], f[i - 1][j - c[i]] + w[i]);
+                else
+                    f[i][j] = f[i - 1][j];
+            
+            /*
+            fadd(k, 0, n)
+                fadd(j, 0, v)
+                    cout << f[k][j] << (j == v ? '\n' : ' ');
+            cout << "///////////////////////" << endl;
+            */
+            
         }
-        cout << ans << endl;
+        cout << f[n][v] << endl;
     }
     return 0;
 }
 
-bool cmp(node &a, node &b)
-{
-    return a.w > b.w;
-}
+

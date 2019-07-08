@@ -7,7 +7,6 @@
 using namespace std;
 const int inf = 0x7f7f7f7f;
 const int mod = 1e9 + 7;
-
 const int maxn = 1e6 + 5;
 
 int main()
