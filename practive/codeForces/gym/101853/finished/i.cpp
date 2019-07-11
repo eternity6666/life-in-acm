@@ -8,7 +8,7 @@ const int maxn = 100 + 5;
 // double getArea(double x);
 int main()
 {
-    // freopen("in.txt", "r", stdin);
+    freopen("in.txt", "r", stdin);
     long long t;
     cin >> t;
     while(t--)
