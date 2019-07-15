@@ -10,10 +10,11 @@ const int mod = 1e9 + 7;
 
 const int maxn = 1e6 + 5;
 
+ll arr[3];
+
 int main()
 {
-    freopen("in.txt", "r", stdin);
-    ll arr[3];
+    // freopen("in.txt", "r", stdin);
     fadd(i, 0, 2)
         cin >> arr[i];
     sort(arr, arr + 3);
@@ -22,30 +23,31 @@ int main()
     if(a == 1)
     {
         if(b == 1)
-            cout << 0 << endl << 0 << endl;
+            cout << 0 << endl;
         else if(b == 2)
-            cout << 1 << endl << 1 << endl;
+            cout << 1 << endl;
         else
-            cout << 2 << endl << 2 << endl;
+            cout << 2 << endl;
     }
     else if(a == 2)
     {
         if(b == 1)
-            cout << 1 << endl << 1 << endl;
+            cout << 1 << endl;
         else if(b == 2)
-            cout << 1 << endl << 1 << endl;
+            cout << 1 << endl;
         else
-            cout << 1 << endl << 2 << endl;
+            cout << 1 << endl;
     }
     else
     {
         if(b == 1)
-            cout << 2 << endl << 2 << endl;
+            cout << 2 << endl;
         else if(b == 2)
-            cout << 1 << endl << 2 << endl;
+            cout << 1 << endl;
         else
-            cout << 2 << endl << 2 << endl;
+            cout << 2 << endl;
     }
+    cout << max(a, b) - 1 << endl;
     return 0;
 }
 
