@@ -11,6 +11,8 @@ const int maxn = 1e6 + 5;
 int main()
 {
     freopen("in.txt", "r", stdin);
+    ll n, m, k;
+    cin >> n >> m >> k;
 
     return 0;
 }
