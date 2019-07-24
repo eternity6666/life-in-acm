@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-const int maxn = 100000;
+const int maxn = 1e6+5;
 
 bool v[maxn];
 
@@ -22,15 +22,20 @@ void getPrime(int n)
                 v[j] = false;
         }
     }
+    int ans = 0;
     for(i = 2; i <= n; i++)
         if(v[i])
-            cout << i << endl;
+        {
+            cout << i << ",";
+            ans++;
+        }
+    cout << ans << endl;
 }
 
 int main() 
 {
 
-    getPrime(1000);
+    getPrime(1e6+3);
     return 0;
 }
 
