@@ -8,17 +8,11 @@ using namespace std;
 const int inf = 0x7f7f7f7f;
 const int mod = 1e9 + 7;
 const int maxn = 1e6 + 5;
-
 int main()
 {
     freopen("in.txt", "r", stdin);
-    int t;
-    scanf("%d", &t);
-    while(t--)
-    {
-        int a;
-i
-    }
+
     return 0;
 }
+
 
