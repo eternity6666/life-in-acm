@@ -1,4 +1,7 @@
-3
-olleh !dlrow
-m'I morf .udh
-I ekil .mca
+
+1
+
+10 1
+20 3
+30 4
+0 0
