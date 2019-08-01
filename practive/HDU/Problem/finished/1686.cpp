@@ -68,9 +68,11 @@ int main()
         n = p.length();
         m = s.length();
         getpre();
+        /*
         fadd(i, 0, n - 1)
             cout << pre[i] << " ";
         cout << endl;
+        */
         cout << kmp() << endl;
     }
     return 0;
