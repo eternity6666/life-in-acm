@@ -1,3 +1,18 @@
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int k, n;
+    while(cin >> k >> n)
+    {
+        cout << k << " " << n << " " << (k^n+0^n) << ":" << (k^n) << endl;
+    }
+    return 0;
+}
+*/
+/*
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,6 +25,7 @@ int main()
         cout << ans << endl;
     }
 }
+*/
 
 /*
 #include <bits/stdc++.h>
