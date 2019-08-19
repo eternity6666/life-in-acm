@@ -149,3 +149,55 @@ int main()
     return 0;
 }
 */
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+    int t; cin >> t;
+    while(t--)
+    {
+        int n, m; cin >> n >> m;
+        string in[25], out[25];
+        int ans[60];
+        bool v[60];
+        memset(v, 0, sizeof(v));
+        for(int i = 1; i <= n; ++i)
+            cin >> in[i] >> out[i];
+        int zt;
+        for(int i = 0; i < m; i++)
+        {
+            zt = 0;
+            for(int j = 0; j < m; j++)
+            {
+                if(in[1][i] == out[1][j] && v[j] == 0)
+                {
+                    int tmp = 1;
+                    for(int k = 2; k <= n; k++)
+                        if(in[k][i] != out[k][j])
+                        {
+                            tmp = 0;
+                            break;
+                        }
+                    if(tmp == 1)
+                    {
+                        v[j] = true;
+                        zt = 1;
+                        ans[i] = j + 1;
+                        break;
+                    }
+                }
+            }
+            if(zt == 0)
+                break;
+        }
+        if(zt == 0)
+            cout << -1 << endl;
+        else
+            for(int i = 0; i < m; i++)
+                cout << ans[i] << (i==m-1?"\n":" ");
+    }
+    return 0;
+}

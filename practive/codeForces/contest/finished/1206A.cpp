@@ -3,12 +3,12 @@
 #include <set>
 using namespace std;
 
-bool v[205];
+bool v[405];
 int a[105], b[105];
 
 int main()
 {
-    for(int i = 1; i <= 200; i++)
+    for(int i = 1; i <= 400; i++)
         v[i] = 1;
     int n; cin >> n;
     for(int i = 1; i <= n; i++)
