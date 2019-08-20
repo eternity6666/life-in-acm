@@ -163,3 +163,21 @@ int main()
     }
 }
 */
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int t; cin >> t;
+    while(t--)
+    {
+        string s; cin >> s;
+        int len = s.length(), i;
+        for(i = 0; i < len; ++i)
+            if(s[i] != 'y')
+                break;
+        if(s[i] == 'z') s[i] = 'b';
+        cout << s << endl;
+    }
+}
