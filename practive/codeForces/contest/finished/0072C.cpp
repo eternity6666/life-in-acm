@@ -12,3 +12,10 @@ int main()
     cout << (a==b?"yes":"no");
     return 0;
 }
+
+/* io
+a := 0
+b := 0
+for(i, 1, x) if(x%i==0, if(i%2==0, a:=a+1, b:=b+1))
+if(a==b, "yes" println, "no" println)
+*/
