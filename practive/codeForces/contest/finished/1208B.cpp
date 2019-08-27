@@ -148,10 +148,42 @@ int main()
 */
 
 #include <iostream>
+#include <map>
 using namespace std;
+
+const int maxn = 2010;
+int n, a[maxn];
 
 int main()
 {
-    
+    cin >> n;
+    for(int i = 0; i < n; i++) cin >> a[i];
+
+    int ans = n - 1;
+    map<int, int> ma;
+    for(int i = 0; i < n; ++i)
+    {
+        bool v = true;
+        for(int j = 0; j < i; ++j)
+        {
+            ma[a[j]]++;
+            if(ma[a[j]] == 2)
+            {
+                v = false;
+                break;
+            }
+        }
+        int mi = n;
+        for(int j = n - 1; j >= i; --j)
+        {
+            ma[a[j]]++;
+            if(ma[a[j]]==1) mi = j;
+            else break;
+        }
+        if(v)
+            ans = ans < mi - i ? ans : mi - i;
+        ma.clear();
+    }
+    cout << ans << endl;        
     return 0;
 }
