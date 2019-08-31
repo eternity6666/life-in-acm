@@ -3,10 +3,9 @@
 #include <map>
 #include <fstream>
 #include <algorithm>
-#define usefre
+// #define usefre
 
 using namespace std;
-
 
 struct node{
    int hp;
