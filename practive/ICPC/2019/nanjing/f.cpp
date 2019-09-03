@@ -1,12 +1,17 @@
 #include <iostream>
 using namespace std;
 
+void solve()
+{
+
+}
+
 int main()
 {
     int t; cin >> t;
     while(t--)
     {
-        int n; cin >> n;
+        solve();
     }
     return 0;
 }
