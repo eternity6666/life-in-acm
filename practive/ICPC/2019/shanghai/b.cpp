@@ -37,6 +37,7 @@ void update(int id, int l, int r, int ql, int qr)
 
 int query(int id, int l, int r, int ql, int qr)
 {
+
 }
 
 int solve()
