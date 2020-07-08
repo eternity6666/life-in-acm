@@ -17,7 +17,7 @@ string caculate(string code1, string way, string code2);
 
 int main()
 {
-	freopen("./in.txt","r", stdin); 
+	// freopen("./in.txt","r", stdin); 
 	// freopen("./out.txt", "w", stdout);
 	
 	for(int i = 0; i < 26; i++)
