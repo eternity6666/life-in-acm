@@ -5,3 +5,5 @@ in*.txt
 out*.txt
 *.class
 *.swp
+*.out.icloud
+.idea
